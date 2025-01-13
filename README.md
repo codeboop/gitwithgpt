@@ -1,1 +1,2 @@
 # gitwithgpt
+Some changes
