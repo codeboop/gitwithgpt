@@ -1,2 +1,2 @@
 # gitwithgpt
-demo change 2
+demo change new
