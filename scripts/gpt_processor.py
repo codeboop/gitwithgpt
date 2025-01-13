@@ -21,8 +21,8 @@ def main():
         {"role": "user", "content": prompt},
     ]
 
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
+    response = openai.chat.completions.create(
+        model="gpt-4o",
         messages=messages
     )
 
