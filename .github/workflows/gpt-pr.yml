@@ -6,7 +6,8 @@ on:
   # You could also use:
   # pull_request:
   #   branches: [ "main" ]
-
+permissions:
+  contents: write
 jobs:
   gpt-process:
     runs-on: ubuntu-latest
