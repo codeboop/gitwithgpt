@@ -21,17 +21,19 @@ def main():
         {"role": "user", "content": prompt},
     ]
 
-    response = openai.chat.completions.create(
-        model="gpt-4o",
+    # Use the new ChatCompletion method
+    response = openai.ChatCompletion.create(
+        model="gpt-4",  # or "gpt-3.5-turbo", etc.
         messages=messages
     )
 
-    gpt_output = response["choices"][0]["message"]["content"]
+    # Note the dot-notation instead of subscript
+    gpt_output = response.choices[0].message.content
 
     output_path = "GPT_SUMMARY.md"
     with open(output_path, "w") as f:
         f.write("# GPT-4 Summary\n\n")
-        f.write(gpt_output.strip())
+        f.write(gpt_output.strip() + "\n")
 
     print(f"GPT output written to {output_path}")
 
